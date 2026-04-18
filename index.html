@@ -359,7 +359,7 @@ function lock(){
   spawn();
 }
 function md(){if(!running||paused)return;if(!col(piece.shape,piece.x,piece.y+1))piece.y++;else lock();draw();}
-function restartTimer(){clearInterval(timer);timer=setInterval(md,Math.max(80,550-(level-1)*45));}
+function restartTimer(){clearInterval(timer);timer=setInterval(md,Math.max(50,Math.round(550*Math.pow(0.5,level-1))));}
 
 function db3d(ctx,x,y,color,size,yo){
   const px=x*size+1,py=yo+y*size+1,s=size-2;
